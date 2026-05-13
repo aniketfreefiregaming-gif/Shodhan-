@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gruha Pravesh Invitation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: 'Georgia', serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Selection Screen */
+        #selection-screen {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('welcome.jpg') center/cover;
+        }
+
+        .lang-btn {
+            padding: 15px 40px;
+            margin: 10px;
+            border: 2px solid #b38728;
+            background: transparent;
+            color: #b38728;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            width: 200px;
+        }
+
+        /* Invitation Site Layout */
+        #main-site {
+            display: none;
+            max-width: 600px; /* Perfect Square Box Feel */
+            margin: 0 auto;
+            background-color: #fdfaf1;
+            position: relative;
+        }
+
+        /* Floating Location Button in the Blank Space */
+        .location-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .loc-btn {
+            background-color: #b38728;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .invitation-image {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: #b38728;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Selection Screen -->
+    <div id="selection-screen">
+        <h1 style="color: #b38728;">Welcome</h1>
+        <button class="lang-btn" onclick="showSite('marathi')">Marathi</button>
+        <button class="lang-btn" onclick="showSite('english')">English</button>
+    </div>
+
+    <!-- Main Invitation -->
+    <div id="main-site">
+        <!-- The Location Box you requested for the blank space -->
+        <div class="location-box">
+            <a href="https://maps.google.com/?q=Nigdi+Pune" target="_blank" class="loc-btn">📍 View Location</a>
+        </div>
+
+        <!-- Section 1: Welcome -->
+        <img src="welcome.jpg" class="invitation-image" alt="Welcome">
+
+        <!-- Section 2: Ceremony -->
+        <img src="ceremony.jpg" class="invitation-image" alt="Ceremony">
+
+        <!-- Section 3: Journey -->
+        <img src="journey.jpg" class="invitation-image" alt="Our Journey">
+
+        <div class="footer">
+            <p>Contact: +91 90217 61646</p>
+            <p>© 2026 | New Home Celebration</p>
+        </div>
+    </div>
+
+    <script>
+        function showSite(lang) {
+            document.getElementById('selection-screen').style.display = 'none';
+            document.getElementById('main-site').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            // If they pick Marathi, you could alert a welcome message or similar
+            if(lang === 'marathi') {
+                console.log("Marathi version selected");
+            }
+        }
+    </script>
+</body>
+</html>
